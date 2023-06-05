@@ -1,24 +1,24 @@
 import React from 'react';
 import './App.css';
 import BookItem from './components/bookItem/BookItem';
-import BookDetails from './components/bookDetails/BookDetails';
+import BookLibrary from './components/bookLibrary/BookLibrary';
 import BookList from './components/bookList/BookList';
 import Favourites from './components/favourites/Favourites';
 import Header from './components/header/Header';
-import Search from './components/search/Search;
+// import Search from './components/search/Search;
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         
-          Group 4 Book Project
+          Group 4: Hungry for Books 
       
       </header>
       <Favourites />  
-      <Search />
+      {/* <Search /> */}
       <BookItem />
-      <BookDetails />
+      <BookLibrary />
       <BookList />
       <Header />
 

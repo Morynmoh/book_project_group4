@@ -5,6 +5,7 @@ import BookDetails from './components/bookDetails/BookDetails';
 import BookList from './components/bookList/BookList';
 import Favourites from './components/favourites/Favourites';
 import Header from './components/header/Header';
+import Search from './components/search/Search;
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       
       </header>
       <Favourites />  
+      <Search />
       <BookItem />
       <BookDetails />
       <BookList />

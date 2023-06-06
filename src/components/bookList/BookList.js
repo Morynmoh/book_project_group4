@@ -10,3 +10,6 @@ const BookList = () => {
 }
 
 export default BookList
+
+//BookList - Mike
+//to categorise books - e.g. Best Seller depending on rating

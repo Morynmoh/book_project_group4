@@ -1,7 +1,7 @@
 import React from 'react';
-import './bookItem.css';
+import './header.css';
 
-const BookItem = () => {
+const Footer = () => {
   return (
     <div>
       
@@ -9,4 +9,4 @@ const BookItem = () => {
   )
 }
 
-export default BookItem
+export default Footer

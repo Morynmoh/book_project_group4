@@ -6,6 +6,7 @@ import BookList from './components/bookList/BookList';
 import Favourites from './components/favourites/Favourites';
 import Header from './components/header/Header';
 import Search from './components/search/Search';
+import ReviewForm from './components/reviewForm/ReviewForm';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <BookLibrary />
       <BookList />
       <Header />
+      <ReviewForm/>
 
 
     </div>

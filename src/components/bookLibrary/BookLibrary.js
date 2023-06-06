@@ -9,4 +9,4 @@ const BookLibrary = () => {
   )
 }
 
-export default BookLibrary;
+export default BookLibrary

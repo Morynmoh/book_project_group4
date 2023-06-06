@@ -5,18 +5,14 @@ import BookLibrary from './components/bookLibrary/BookLibrary';
 import BookList from './components/bookList/BookList';
 import Favourites from './components/favourites/Favourites';
 import Header from './components/header/Header';
-// import Search from './components/search/Search;
+import Search from './components/search/Search';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-          Group 4: Hungry for Books 
-      
-      </header>
+      <h1 className="App-header">Group 4: Hungry for Books. need One</h1>
       <Favourites />  
-      {/* <Search /> */}
+      <Search />
       <BookItem />
       <BookLibrary />
       <BookList />

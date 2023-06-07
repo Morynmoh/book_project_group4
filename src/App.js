@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Search from './components/search/Search';
-import Footer from './components/footer/Footer';
+import Footer from './components/favoritesList/FavoritesList';
 
 function App() {
   const [favorites, setFavorites] = useState([]);

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import Search from "./components/search/Search";
-import Footer from "./components/favoritesList/FavoritesList";
-import Footer2 from "./components/footer2/Footer2";
+import FavoritesList from "./components/favoritesList/FavoritesList";
+import Footer from "./components/footer/Footer";
 import BookList from "./components/bookList/BookList";
 
 function App() {
@@ -30,14 +30,14 @@ function App() {
       <BookList />
     </div>
     <div className="favourites">
-      <Footer
+      <FavoritesList
         favorites={favorites}
         onRemoveFromFavorites={removeFromFavorites}
       />
     </div>
   </div>
   
-  <Footer2 />
+  <Footer />
 </div>
 
   );

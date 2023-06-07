@@ -1,14 +1,14 @@
 import React from 'react';
-import './footer2.css';
+import './footer.css';
 
 
-const Footer2 = () => {
+const Footer = () => {
   return (
-    <div className="footer2">
+    <div className="footer">
       <p>@ 2023 Copyright by Moringa Group 4 Software Development </p>
       <p>Dyphnah | Mike | Kenneth | Abinel | Maureen </p>
     </div>
   )
 }
 
-export default Footer2
+export default Footer

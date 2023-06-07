@@ -1,5 +1,5 @@
 import React from 'react';
-import './bookItem.css';
+// import './bookItem.css';
 
 const BookCard = () => {
   return (

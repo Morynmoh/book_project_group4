@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./search.css";
 import axios from "axios";
+import BookList from "../bookList/BookList";
 
 function Search() {
   const [book, setBook] = useState("");
@@ -42,6 +43,7 @@ function Search() {
     <div className="container">
       <h1>Hungry for Books</h1>
       <form onSubmit={handleSubmit}>
+        <BookList key={book.id} book={book} bookItems={result} />
         <div className="form-group">
           <input
             type="text"

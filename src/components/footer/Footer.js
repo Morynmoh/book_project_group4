@@ -1,12 +1,14 @@
 import React from 'react';
-import './header.css';
+import Favorites from '../bookCard/Favorites';
+import './footer.css';
 
-const Footer = () => {
+const Footer = ({ favorites, onRemoveFromFavorites }) => {
   return (
     <div>
-      
+      <p>This is the footer</p>
+      <Favorites favorites={favorites} onRemoveFromFavorites={onRemoveFromFavorites} />
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

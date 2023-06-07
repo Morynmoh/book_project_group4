@@ -1,41 +1,43 @@
 import React, { useState } from "react";
 import "./search.css";
 import axios from "axios";
+import BookCard from '../bookCard/BookCard';
 
-function Search() {
+function Search({ onAddToFavorites }) {
   const [book, setBook] = useState("");
   const [result, setResult] = useState([]);
-  const [apiKey, setApiKey] = useState("AIzaSyAB1u5fi4UJdEkFumMpPh44H4HMYEUEXp8");
   const [currentPage, setCurrentPage] = useState(1);
-  const [imagesPerPage] = useState(3); // Number of images to display per page
+  const imagesPerPage = 3; // Number of images to display per page
 
-  function handleChange(event) {
+  const handleChange = (event) => {
     const book = event.target.value;
-    setBook(book); //initialize value to the variable book
-  }
+    setBook(book);
+  };
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     axios
       .get(
-        "https://www.googleapis.com/books/v1/volumes?q=" +
-          book +
-          "&key=" +
-          apiKey +
-          "&maxResults=40"
+        `https://www.googleapis.com/books/v1/volumes?q=${book}&maxResults=40`
       )
-      .then((data) => {
-        setResult(data.data.items);
-        setCurrentPage(1); // Reset current page when new search results are fetched
+      .then((response) => {
+        setResult(response.data.items || []); // Set empty array if no items found
+        setCurrentPage(1);
+      })
+      .catch((error) => {
+        console.log("Error occurred while fetching data:", error);
+        setResult([]);
       });
-  }
+  };
 
-  // Calculate the index range for the current page
+  const addToFavorites = (book) => {
+    onAddToFavorites(book);
+  };
+
   const indexOfLastImage = currentPage * imagesPerPage;
   const indexOfFirstImage = indexOfLastImage - imagesPerPage;
   const currentImages = result.slice(indexOfFirstImage, indexOfLastImage);
 
-  // Update the current page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
@@ -58,7 +60,7 @@ function Search() {
       </form>
       <div className="book-container">
         {currentImages.map((book) => (
-          <BookCard book={book} key={book.id} />
+          <BookCard book={book} onAddToFavorites={addToFavorites} key={book.id} />
         ))}
       </div>
       {result.length > imagesPerPage && (
@@ -72,20 +74,6 @@ function Search() {
     </div>
   );
 }
-
-const BookCard = ({ book }) => {
-  const { title, authors, imageLinks, previewLink } = book.volumeInfo;
-
-  return (
-    <div className="book-card">
-      <a target="_blank" rel="noopener noreferrer" href={previewLink}>
-        <img src={imageLinks?.thumbnail} alt={title} />
-      </a>
-      <h3>{title}</h3>
-      <p>{authors?.join(", ")}</p>
-    </div>
-  );
-};
 
 const Pagination = ({ imagesPerPage, totalImages, currentPage, paginate }) => {
   const pageNumbers = [];
@@ -113,12 +101,16 @@ const Pagination = ({ imagesPerPage, totalImages, currentPage, paginate }) => {
         ))}
       </ul>
     </nav>
-
-);
+  );
 };
 
-
 export default Search;
+
+
+
+
+
+
 
 
 // import React, { useState } from "react";

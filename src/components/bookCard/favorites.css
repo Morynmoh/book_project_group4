@@ -1,0 +1,12 @@
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    /* Add the desired height */
+    height: 200px;
+  }
+  
+  .favorites-grid .book-card {
+    width: 100%;
+  }
+  

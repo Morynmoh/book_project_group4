@@ -1,5 +1,5 @@
 import React from 'react';
-import Favorites from '../bookCard/Favorites';
+import Favorites from '../favourites/Favorites';
 import './footer.css';
 
 const Footer = ({ favorites, onRemoveFromFavorites }) => {

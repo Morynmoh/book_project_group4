@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import './App.css';
-import Search from './components/search/Search';
+import React, { useState } from "react";
+import "./App.css";
+import Search from "./components/search/Search";
 import Footer from './components/favoritesList/FavoritesList';
+import Footer2 from "./components/footer2/Footer2";
+import BookList from "./components/bookList/BookList";
 
 function App() {
   const [favorites, setFavorites] = useState([]);
@@ -15,33 +17,33 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1 className="App-header">Group 4: <Search onAddToFavorites={addToFavorites} /></h1>
-      <Footer favorites={favorites} onRemoveFromFavorites={removeFromFavorites} />
+<div className="App">
+  <div className="image-container">
+    <img src="./images/CA-Preparation-Books.jpg" alt="Background" />
+    <div className="search-container">
+      <Search onAddToFavorites={addToFavorites} />
     </div>
+  </div>
+  
+  <div className="side">
+    <div className="booklist">
+      <BookList />
+    </div>
+    <div className="favourites">
+      <Footer
+        favorites={favorites}
+        onRemoveFromFavorites={removeFromFavorites}
+      />
+    </div>
+  </div>
+  
+  <Footer2 />
+</div>
+
   );
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React from 'react';
 // import './App.css';
@@ -56,7 +58,7 @@ export default App;
 //   return (
 //     <div className="App">
 //       <h1 className="App-header">Group 4: <Search /></h1>
-//       <Favourites />  
+//       <Favourites />
 //       <BookCard
 //         thumbnail="http://books.google.com/books/content?id=p1v6DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
 //         title="Eloquent JavaScript, 3rd Edition"

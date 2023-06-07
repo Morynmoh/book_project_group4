@@ -21,8 +21,8 @@ const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites }) => {
       {volumeInfo.imageLinks && (
         <img src={volumeInfo.imageLinks.thumbnail} alt="Book Thumbnail" />
       )}
-      {volumeInfo.title && <h3>{volumeInfo.title}</h3>}
-      {volumeInfo.subtitle && <h4>{volumeInfo.subtitle}</h4>}
+      {volumeInfo.title && <h6>{volumeInfo.title}</h6>}
+      {volumeInfo.subtitle && <h6>{volumeInfo.subtitle}</h6>}
       {book.kind && <p>Kind: {book.kind}</p>}
       {volumeInfo.authors && (
         <p>Authors: {volumeInfo.authors.join(', ')}</p>

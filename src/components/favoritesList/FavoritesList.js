@@ -1,8 +1,8 @@
 import React from 'react';
-import Favorites from '../bookCard/Favorites';
-import './footer.css';
+import Favorites from '../favorites/Favorites';
+import './favoritesList.css';
 
-const Footer = ({ favorites, onRemoveFromFavorites }) => {
+const FavoritesList = ({ favorites, onRemoveFromFavorites }) => {
   return (
     <div>
       <p>This is the footer</p>
@@ -11,4 +11,4 @@ const Footer = ({ favorites, onRemoveFromFavorites }) => {
   );
 };
 
-export default Footer;
+export default FavoritesList;

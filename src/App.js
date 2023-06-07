@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Search from './components/search/Search';
-import Footer from './components/favoritesList/FavoritesList';
+import FavoritesList from './components/favoritesList/FavoritesList';
 
 function App() {
   const [favorites, setFavorites] = useState([]);
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="App-header">Group 4: <Search onAddToFavorites={addToFavorites} /></h1>
-      <Footer favorites={favorites} onRemoveFromFavorites={removeFromFavorites} />
+      <FavoritesList favorites={favorites} onRemoveFromFavorites={removeFromFavorites} />
     </div>
   );
 }

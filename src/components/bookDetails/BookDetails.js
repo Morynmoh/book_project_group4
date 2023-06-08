@@ -1,33 +1,20 @@
-import './bookCard.css';
 import React from 'react';
 
-const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites }) => {
+const BookDetails = ({ book }) => {
   if (!book) {
     return null; // Handle case when book is undefined
   }
 
   const { volumeInfo } = book;
 
-  const addToFavorites = () => {
-    if (onAddToFavorites) {
-      onAddToFavorites(book);
-    }
-  };
-
-  const removeFromFavorites = () => {
-    if (onRemoveFromFavorites) {
-      onRemoveFromFavorites(book);
-    }
-  };
-
   return (
-    <div className="book-card">
-      <div className="book-image">
+    <div>
+      <div>
         {volumeInfo.imageLinks && (
           <img src={volumeInfo.imageLinks.thumbnail} alt="Book Thumbnail" />
         )}
       </div>
-      <div className="book-details">
+      <div>
         {volumeInfo.title && <h3>{volumeInfo.title}</h3>}
         {volumeInfo.subtitle && <h4>{volumeInfo.subtitle}</h4>}
         {book.kind && <p>Kind: {book.kind}</p>}
@@ -42,16 +29,9 @@ const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites }) => {
             Preview Link
           </a>
         )}
-
-        {onRemoveFromFavorites && (
-          <button onClick={removeFromFavorites}>Remove from Favorites</button>
-        )}
-        {!onRemoveFromFavorites && (
-          <button onClick={addToFavorites}>Add to Favorites</button>
-        )}
       </div>
     </div>
   );
 };
 
-export default BookCard;
+export default BookDetails;

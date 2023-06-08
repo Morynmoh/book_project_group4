@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import BookCard from '../bookCard/BookCard';
+import './bookList.css';
 
 function BookList({ onAddToFavorites }) {
   const [books, setBooks] = useState([]);

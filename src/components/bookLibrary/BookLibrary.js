@@ -3,11 +3,13 @@ import Search from "../search/Search";
 import FavoritesList from "../favoritesList/FavoritesList";
 import Footer from "../footer/Footer";
 import BookList from "../bookList/BookList";
+import BookDetails from "../bookDetails/BookDetails";
 
 import "./bookLibrary.css";
 
 function BookLibrary() {
   const [favorites, setFavorites] = useState([]);
+  const [selectedBook, setSelectedBook] = useState(null);
 
   const addToFavorites = (book) => {
     setFavorites((prevFavorites) => [...prevFavorites, book]);
@@ -17,6 +19,14 @@ function BookLibrary() {
     setFavorites((prevFavorites) =>
       prevFavorites.filter((favBook) => favBook.id !== book.id)
     );
+  };
+
+  const handleClickThumbnail = (book) => {
+    setSelectedBook(book);
+  };
+
+  const handleCloseDetails = () => {
+    setSelectedBook(null);
   };
 
   return (
@@ -30,7 +40,10 @@ function BookLibrary() {
 
       <div className="side">
         <div className="booklist">
-          <BookList onAddToFavorites={addToFavorites} />
+          <BookList
+            onAddToFavorites={addToFavorites}
+            onClickThumbnail={handleClickThumbnail}
+          />
         </div>
         <div className="favourites">
           <FavoritesList
@@ -41,6 +54,10 @@ function BookLibrary() {
       </div>
 
       <Footer />
+
+      {selectedBook && (
+        <BookDetails book={selectedBook} onClose={handleCloseDetails} />
+      )}
     </div>
   );
 }

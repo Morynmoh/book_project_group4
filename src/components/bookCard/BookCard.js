@@ -1,4 +1,4 @@
-import './bookCard.css'
+import './bookCard.css';
 import React from 'react';
 
 const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites }) => {
@@ -9,11 +9,15 @@ const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites }) => {
   const { volumeInfo } = book;
 
   const addToFavorites = () => {
-    onAddToFavorites(book);
+    if (onAddToFavorites) {
+      onAddToFavorites(book);
+    }
   };
 
   const removeFromFavorites = () => {
-    onRemoveFromFavorites(book);
+    if (onRemoveFromFavorites) {
+      onRemoveFromFavorites(book);
+    }
   };
 
   return (
@@ -21,8 +25,8 @@ const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites }) => {
       {volumeInfo.imageLinks && (
         <img src={volumeInfo.imageLinks.thumbnail} alt="Book Thumbnail" />
       )}
-      {volumeInfo.title && <h6>{volumeInfo.title}</h6>}
-      {volumeInfo.subtitle && <h6>{volumeInfo.subtitle}</h6>}
+      {volumeInfo.title && <h3>{volumeInfo.title}</h3>}
+      {volumeInfo.subtitle && <h4>{volumeInfo.subtitle}</h4>}
       {book.kind && <p>Kind: {book.kind}</p>}
       {volumeInfo.authors && (
         <p>Authors: {volumeInfo.authors.join(', ')}</p>
@@ -47,30 +51,3 @@ const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites }) => {
 };
 
 export default BookCard;
-
-
-
-
-
-
-//KensCode
-// //favourites, book information - Kenneth
-// //Title, Author, import Review and Favourites 
-// import React from 'react';
-
-// const BookCard = ({ book }) => {
-//   const { id, volumeInfo } = book;
-
-//   return (
-//     <div>
-//       <img src={volumeInfo.imageLinks.thumbnail} alt="Book Thumbnail" />
-//       <h3>{volumeInfo.title}</h3>
-//       {volumeInfo.subtitle && <h4>{volumeInfo.subtitle}</h4>}
-//       <p>Kind: {book.kind}</p>
-//       <p>Authors: {volumeInfo.authors.join(', ')}</p>
-//       <p>Published Date: {volumeInfo.publishedDate}</p>
-//     </div>
-//   );
-// };
-
-// export default BookCard;

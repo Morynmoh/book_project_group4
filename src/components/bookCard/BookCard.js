@@ -3,28 +3,26 @@ import React from 'react';
 
 const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites }) => {
   if (!book) {
-    return null; // Handle case when book is undefined
+    return null;
   }
 
   const { volumeInfo } = book;
 
   const addToFavorites = () => {
-    if (onAddToFavorites) {
-      onAddToFavorites(book);
-    }
+    onAddToFavorites && onAddToFavorites(book);
   };
 
   const removeFromFavorites = () => {
-    if (onRemoveFromFavorites) {
-      onRemoveFromFavorites(book);
-    }
+    onRemoveFromFavorites && onRemoveFromFavorites(book);
   };
 
   return (
     <div className="book-card">
       <div className="book-image">
         {volumeInfo.imageLinks && (
-          <img src={volumeInfo.imageLinks.thumbnail} alt="Book Thumbnail" />
+          <a href={`/book-details/${book.id}`} target="_blank" rel="noopener noreferrer">
+            <img src={volumeInfo.imageLinks.thumbnail} alt="Book Thumbnail" />
+          </a>
         )}
       </div>
       <div className="book-details">
@@ -43,10 +41,9 @@ const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites }) => {
           </a>
         )}
 
-        {onRemoveFromFavorites && (
+        {onRemoveFromFavorites ? (
           <button onClick={removeFromFavorites}>Remove from Favorites</button>
-        )}
-        {!onRemoveFromFavorites && (
+        ) : (
           <button onClick={addToFavorites}>Add to Favorites</button>
         )}
       </div>

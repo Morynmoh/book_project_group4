@@ -4,6 +4,7 @@ import FavoritesList from "../favoritesList/FavoritesList";
 import Footer from "../footer/Footer";
 import BookList from "../bookList/BookList";
 import BookDetails from "../bookDetails/BookDetails";
+import NavBar from "../navBar/NavBar";
 
 import "./bookLibrary.css";
 
@@ -31,6 +32,7 @@ function BookLibrary() {
 
   return (
     <div className="BookLibrary">
+      <NavBar />
       <div className="image-container">
         <img src="./images/CA-Preparation-Books.jpg" alt="Background" />
         <div className="search-container">

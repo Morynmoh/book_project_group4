@@ -9,7 +9,7 @@ const Favorites = ({ favorites, onRemoveFromFavorites }) => {
 
   return (
     <div className="favorites">
-      <h2>Customer favorites eBooks</h2>
+      {/* <h2>Customer favorites eBooks</h2> */}
       <div className="favorites-grid">
         {favorites.map((book) => (
           <BookCard

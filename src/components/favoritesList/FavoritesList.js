@@ -5,7 +5,7 @@ import './favoritesList.css';
 const FavoritesList = ({ favorites, onRemoveFromFavorites }) => {
   return (
     <div>
-      <p>This is the footer</p>
+      <p>Here are the books you like</p>
       <Favorites favorites={favorites} onRemoveFromFavorites={onRemoveFromFavorites} />
     </div>
   );

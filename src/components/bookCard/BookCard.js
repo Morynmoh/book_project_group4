@@ -1,7 +1,8 @@
 import './bookCard.css';
 import React from 'react';
+import BookThumbnail from './BookThumbnail';
 
-const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites }) => {
+const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites, onClick }) => {
   if (!book) {
     return null;
   }
@@ -16,15 +17,10 @@ const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites }) => {
     onRemoveFromFavorites && onRemoveFromFavorites(book);
   };
 
+
   return (
     <div className="book-card">
-      <div className="book-image">
-        {volumeInfo.imageLinks && (
-          <a href={`/book-details/${book.id}`} target="_blank" rel="noopener noreferrer">
-            <img src={volumeInfo.imageLinks.thumbnail} alt="Book Thumbnail" />
-          </a>
-        )}
-      </div>
+      <img src={BookThumbnail} alt='Thumbnail' onClick={onClick} />
       <div className="book-details">
         {volumeInfo.title && <h3>{volumeInfo.title}</h3>}
         {volumeInfo.subtitle && <h4>{volumeInfo.subtitle}</h4>}
@@ -50,5 +46,6 @@ const BookCard = ({ book, onAddToFavorites, onRemoveFromFavorites }) => {
     </div>
   );
 };
+
 
 export default BookCard;

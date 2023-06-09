@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import BookCard from '../bookCard/BookCard';
 import './bookList.css';
+import BookDetails from '../bookDetails/BookDetails';
 
 function BookList({ onAddToFavorites }) {
   const [books, setBooks] = useState([]);
@@ -27,13 +28,23 @@ function BookList({ onAddToFavorites }) {
     onAddToFavorites(book);
   };
 
+  const [displayBookDetails, setDisplayBookDetails] = useState(false)
+  
+  const handleClick = () =>{
+    setDisplayBookDetails(true)
+  }
+
   return (
     <div>
       <h1>Book List</h1>
       <div className="book-container">
         {books.map((book) => (
-          <BookCard book={book} onAddToFavorites={addToFavorites} key={book.id} />
+          <BookCard book={book} onAddToFavorites={addToFavorites} key={book.id}  />
         ))}
+       ( {displayBookDetails ? (
+        < BookDetails />
+        ) : (
+        <BookCard onClick={handleClick} />)}
       </div>
     </div>
   );

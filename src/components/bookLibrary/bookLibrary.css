@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: "Arial Nova Cond", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .image-container {
@@ -37,7 +37,7 @@
 .booklist {
   flex: 3;
   width: 75%;
-  background-color: rgba(243, 246, 246, 0.738);
+  background-color: #DADADC;
   overflow-y: auto;
   padding: 20px;
 }

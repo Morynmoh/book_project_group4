@@ -1,70 +1,71 @@
 # Getting Started with Create React App
+## Project Name:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hungry for Books
 
-## Available Scripts
+## Authors:
 
+1. Abinel Kiragu
+2. Dyphnah Nyamongo
+3. Kenneth Wanguka
+4. Maureen Omamo
+5. Mike Makol
+
+## Description:
+
+This is end of Phase 2 Project assignment as required by Moringa School. For this project, we will design and code a book recommedation app using React.js. The App will run on a single html file, but will styled using CSS and add interactivity with Javascript.
+
+This project will include the following components:
+
+1. Search Component so that users can enter the title or author's name in the search bar to quickly find specific books you're interested in.
+
+2. Favorites Component where users can quickly find and access their preferred books without the need to search or browse through the entire catalog repeatedly.
+
+3. Book Library component to allow users browse through a vast collection of books, organized by various categories such as bestsellers, authors , etc.
+
+4. About Book Component that will provide detailed information such as title, author, publication date, description, reviews, ratings, and other relevant metadata. This component will also display Review Form Component for readers to provide detailed feedback, share their impressions, and highlight the aspects they enjoyed or found lacking in the book.
+
+5. Finally, the project will include Header and Footer Components to display navigation and copyright information respectively.
+
+## The website will be hosted on GitHub. LINK
+
+## What problem does the website solve?
+
+The existing book market lacks efficient and personalized methods for readers to discover new books that align with their specific interests and preferences. This leads to a significant challenge in finding relevant and engaging reading material, resulting in decreased reading enjoyment and limited exposure to diverse literary genres. 
+
+Therefore, there is a need for a book recommendation website that leverages user preferences and advanced algorithms to deliver tailored reading recommendations, enhancing the overall reading experience and promoting literary exploration.
+
+## Project Setup
 In the project directory, you can run:
-
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Deliverables/Project Requirements:
 
-### `npm test`
+1. A well documented Readme file on Github A project README that includes: - project or program name - author name - description of project - project setup instructions - link to live site on GitHub Pages - copyright and license information
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Project is in a polished, portfolio-quality state.
+Suggestions for what this can mean: Intuitive, easy to follow layout. Simple yet polished styling. Form field labels where appropriate. Form fields that are validated correctly, and get cleared after submitting. Detailed, well put together readme. No typos. And much more.
 
-### `npm run build`
+3. Project works as expected All objectives are functionally met in the deployed project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. 20 + commits in the project with well detailed commit messages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. App uses at least 5 components in a way that keeps your code well organized
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. This criterion is linked to a Learning OutcomeThe app has at least 3 client-side routes using react-router
 
-### `npm run eject`
+7. This criterion is linked to a Learning OutcomeThe app uses a json-server to create a RESTful API for your backend and make both a GET and a POST request to the json server.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+8. Project follows good coding practices by keeping code DRY (Do not repeat yourself) by utilizing functions to abstract repetitive code.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Credits:
+1. Google Api: 
+2. YouTube videos (https://www.youtube.com/watch?v=LGcgChoD_qY)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
+Copyright (c) [2023] [Group 4: Dyphnah, Ken, Maureen, Abinel and Mike]
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Permission is hereby granted, free of charge, without limitation the rights to use, copy, modify, merge, publish, and/or sell website design.

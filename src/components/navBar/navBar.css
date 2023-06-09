@@ -7,6 +7,7 @@
     margin: 0 0;
     font-family: "Arial Nova Cond", Arial, sans-serif;
     /* color: orange; */
+    height:80px;
 
   }
   
@@ -20,6 +21,7 @@
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
+    margin-right: 60px;
   }
   
   .nav-links {

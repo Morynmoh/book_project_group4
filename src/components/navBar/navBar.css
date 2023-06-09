@@ -5,8 +5,7 @@
     background-color: #3c6382;
     padding: 0 0;
     margin: 0 0;
-    font-family: "Arial Nova Cond", Arial, sans-serif;
-    /* color: orange; */
+    font-family: "Poppins", sans-serif;
     height:80px;
 
   }
@@ -21,7 +20,7 @@
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
-    margin-right: 60px;
+    margin-right: 90px;
   }
   
   .nav-links {
@@ -45,11 +44,11 @@
     text-decoration: none;
     /* color: #333; */
     transition: color 0.3s;
-    color: orange;
+    color: white;
   }
   
   .nav-links a:hover {
-    color: #f00;
+    color: orange;
     text-decoration: underline;
   }
   

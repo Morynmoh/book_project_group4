@@ -26,7 +26,7 @@ This project will include the following components:
 
 5. Finally, the project will include Header and Footer Components to display navigation and copyright information respectively.
 
-## The website will be hosted on GitHub. LINK
+## The website will be hosted on GitHub. [LINK](https://heroic-cassata-365e2b.netlify.app/)https://book2-peach.vercel.app/)
 
 ## What problem does the website solve?
 

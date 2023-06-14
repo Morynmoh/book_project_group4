@@ -1,34 +1,46 @@
-import React, { useState } from "react";
-import BookCard from "../bookCard/BookCard";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import BookCard from '../bookCard/BookCard';
 import './bookList.css';
 
-const BookList = ({ bookItems }) => {
-  const [selectedCategory, setSelectedCategory] = useState("allBooks");
+function BookList({ onAddToFavorites }) {
+  const [books, setBooks] = useState([]);
 
-  function handleCategoryChange(event) {
-    setSelectedCategory(event.target.value);
-  }
+  useEffect(() => {
+    fetchBooks();
+  }, []);
 
-  const filteredBooks = selectedCategory === "allBooks" ? bookItems : bookItems.filter((item) => item.category === selectedCategory)
-   
+  const fetchBooks = async () => {
+    try {
+      const response = await axios.get(
+        "https://www.googleapis.com/books/v1/volumes?q=programming"
+      );
+      const data = response.data.items || [];
+      setBooks(data);
+    } catch (error) {
+      console.log("Error occurred while fetching data:", error);
+      setBooks([]);
+    }
+  };
+
+  const addToFavorites = (book) => {
+    onAddToFavorites(book);
+  };
+
   return (
-    <div className="bookList">
-      <div className="filter">
-        <select name="filter" onChange={handleCategoryChange}>
-          <option value="allBooks">All Books</option>
-          <option value="bestSold">Best Sellers</option>
-        </select>
-      </div>
-      <div className="bookItems">
-        {bookItems.map((item) => (
-          <BookCard key={item.id} book={item.book} category={item.category} />
+    <div>
+      <h1>Book List</h1>
+      <div className="book-container">
+        {books.map((book) => (
+          <BookCard book={book} onAddToFavorites={addToFavorites} key={book.id} />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default BookList
+export default BookList;
+
 
 //BookList - Mike
 //to categorise books - e.g. Best Seller depending on rating
